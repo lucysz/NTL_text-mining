@@ -1,0 +1,159 @@
+name,diagosis,index,chapt
+Intellectual Disability (Intellectual Developmental Disorder),dsm5_chapt1diagnosis1,16.65258385,1
+Language Disorder,dsm5_chapt1diagnosis2,15.70613535,1
+Speech Sound Disorder,dsm5_chapt1diagnosis3,14.87644012,1
+Childhood-Onset Fluency Disorder (Stuttering),dsm5_chapt1diagnosis4,12.81155837,1
+Social (Pragmatic) Communication Disorder,dsm5_chapt1diagnosis5,19.1914784,1
+Autism Spectrum Disorder,dsm5_chapt1diagnosis6,15.93778846,1
+Attention-Deficit/Hyperactivity Disorder,dsm5_chapt1diagnosis7,14.83379991,1
+Specific Learning Disorder,dsm5_chapt1diagnosis8,17.10912777,1
+Developmental Coordination Disorder,dsm5_chapt1diagnosis9,16.59403029,1
+Stereotypic Movement Disorder,dsm5_chapt1diagnosis10,13.49732068,1
+Tic Disorders,dsm5_chapt1diagnosis11,14.27745029,1
+Delusional Disorder,dsm5_chapt2diagnosis1,15.14471484,2
+Brief Psychotic Disorder,dsm5_chapt2diagnosis2,15.83887819,2
+Schizophreniform Disorder,dsm5_chapt2diagnosis3,17.33537262,2
+Schizophrenia,dsm5_chapt2diagnosis4,14.65202401,2
+Schizoaffective Disorder,dsm5_chapt2diagnosis5,16.29471177,2
+Substance/Medication-Induced Psychotic Disorder,dsm5_chapt2diagnosis6,19.41600142,2
+Psychotic Disorder Due to Another Medical Condition,dsm5_chapt2diagnosis7,17.84870144,2
+Catatonia Associated With Another Mental Disorder (Catatonia Specifier),dsm5_chapt2diagnosis8,16.54550786,2
+Catatonic Disorder Due to Another Medical Condition,dsm5_chapt2diagnosis9,14.96125957,2
+Bipolar I Disorder,dsm5_chapt3diagnosis1,16.02428182,3
+Bipolar II Disorder,dsm5_chapt3diagnosis2,18.62103338,3
+Cyclothymic Disorder ,dsm5_chapt3diagnosis3,18.16751235,3
+Substance/Medication-Induced Bipolar and Related Disorder,dsm5_chapt3diagnosis4,17.8769812,3
+Bipolar and Related Disorder Due to Another Medical Condition,dsm5_chapt3diagnosis5,18.81348714,3
+Disruptive Mood Dysregulation Disorder,dsm5_chapt4diagnosis1,16.24397705,4
+Major Depressive Disorder,dsm5_chapt4diagnosis2,14.63357483,4
+Persistent Depressive Disorder (Dysthymia),dsm5_chapt4diagnosis3,12.9610208,4
+Premenstrual Dysphoric Disorder,dsm5_chapt4diagnosis4,15.17069458,4
+Substance/Medication-Induced Depressive Disorder,dsm5_chapt4diagnosis5,18.67473176,4
+Depressive Disorder Due to Another Medical Condition,dsm5_chapt4diagnosis6,17.68502663,4
+Separation Anxiety Disorder,dsm5_chapt5diagnosis1,14.4313978,5
+Selective Mutism,dsm5_chapt5diagnosis2,14.8551394,5
+Specific Phobia,dsm5_chapt5diagnosis3,15.31016639,5
+Social Anxiety Disorder (Social Phobia),dsm5_chapt5diagnosis4,14.1485633,5
+Panic Disorder,dsm5_chapt5diagnosis5,14.21527273,5
+Panic Attack Specifier,dsm5_chapt5diagnosis6,13.74983444,5
+Agoraphobia,dsm5_chapt5diagnosis7,14.61822529,5
+Generalized Anxiety Disorder,dsm5_chapt5diagnosis8,14.3191577,5
+Substance/Medication-Induced Anxiety Disorder,dsm5_chapt5diagnosis9,17.69422469,5
+Anxiety Disorder Due to Another Medical Condition,dsm5_chapt5diagnosis10,16.59201202,5
+Obsessive-Compulsive Disorder,dsm5_chapt6diagnosis1,14.04926483,6
+Body Dysmorphic Disorder,dsm5_chapt6diagnosis2,13.60704035,6
+Hoarding Disorder,dsm5_chapt6diagnosis3,15.195095,6
+Trichotillomania (Hair-Pulling Disorder),dsm5_chapt6diagnosis4,12.8909706,6
+Excoriation (Skin-Picking) Disorder,dsm5_chapt6diagnosis5,13.31487439,6
+Substance/Medication-Induced Obsessive-Compulsive and Related Disorder,dsm5_chapt6diagnosis6,18.53275954,6
+Obsessive-Compulsive and Related Disorder Due to Another Medical Condition,dsm5_chapt6diagnosis7,17.99211083,6
+Reactive Attachment Disorder,dsm5_chapt7diagnosis1,15.11122955,7
+Disinhibited Social Engagement Disorder,dsm5_chapt7diagnosis2,13.9303345,7
+Posttraumatic Stress Disorder,dsm5_chapt7diagnosis3,15.696565,7
+Acute Stress Disorder,dsm5_chapt7diagnosis4,15.97433258,7
+Adjustment Disorders,dsm5_chapt7diagnosis5,13.87082311,7
+Dissociative Identity Disorder,dsm5_chapt8diagnosis1,15.06643639,8
+Dissociative Amnesia,dsm5_chapt8diagnosis2,14.57947602,8
+Depersonalization/Derealization Disorder,dsm5_chapt8diagnosis3,14.03623149,8
+Somatic Symptom Disorder,dsm5_chapt9diagnosis1,15.27111678,9
+Illness Anxiety Disorder,dsm5_chapt9diagnosis2,15.30429175,9
+Conversion Disorder (Functional Neurological Symptom Disorder),dsm5_chapt9diagnosis3,14.38850467,9
+Psychological Factors Affecting Other Medical Conditions,dsm5_chapt9diagnosis4,17.96149697,9
+Factitious Disorder,dsm5_chapt9diagnosis5,17.43664634,9
+Pica,dsm5_chapt10diagnosis1,17.52606938,10
+Rumination Disorder,dsm5_chapt10diagnosis2,14.20733419,10
+Avoidant/Restrictive Food Intake Disorder,dsm5_chapt10diagnosis3,17.495728,10
+Anorexia Nervosa,dsm5_chapt10diagnosis4,16.02929745,10
+Bulimia Nervosa,dsm5_chapt10diagnosis5,15.13871154,10
+Binge-Eating Disorder,dsm5_chapt10diagnosis6,14.37314604,10
+Enuresis,dsm5_chapt11diagnosis1,14.30943989,11
+Encopresis,dsm5_chapt11diagnosis2,13.88615748,11
+Insomnia Disorder ,dsm5_chapt12diagnosis1,15.94892161,12
+Hypersomnolence Disorder,dsm5_chapt12diagnosis2,14.54455006,12
+Narcolepsy,dsm5_chapt12diagnosis3,14.12625872,12
+Obstructive Sleep Apnea Hypopnea,dsm5_chapt12diagnosis4,13.64694198,12
+Central Sleep Apnea,dsm5_chapt12diagnosis5,16.16750481,12
+Sleep-Related Hypoventilation,dsm5_chapt12diagnosis6,13.49732068,12
+Circadian Rhythm Sleep-Wake Disorders,dsm5_chapt12diagnosis7,15.82330565,12
+Non?apid Eye Movement Sleep Arousal Disorders,dsm5_chapt12diagnosis8,14.77735387,12
+Nightmare Disorder,dsm5_chapt12diagnosis9,15.28875225,12
+Rapid Eye Movement Sleep Behavior Disorder,dsm5_chapt12diagnosis10,15.37654871,12
+Restless Legs Syndrome,dsm5_chapt12diagnosis11,15.09057663,12
+Substance/Medication-Induced Sleep Disorder,dsm5_chapt12diagnosis12,16.70715716,12
+Delayed Ejaculation,dsm5_chapt13diagnosis1,13.7913798,13
+Erectile Disorder,dsm5_chapt13diagnosis2,14.00270539,13
+Female Orgasmic Disorder ,dsm5_chapt13diagnosis3,15.73862021,13
+Female Sexual Interest/Arousal Disorder,dsm5_chapt13diagnosis4,17.18940966,13
+Genito-Pelvic Pain/Penetration Disorder,dsm5_chapt13diagnosis5,16.10186697,13
+Male Hypoactive Sexual Desire Disorder,dsm5_chapt13diagnosis6,16.02289696,13
+Premature (Early) Ejaculation,dsm5_chapt13diagnosis7,16.22217341,13
+Substance/Medication-Induced Sexual Dysfunction,dsm5_chapt13diagnosis8,15.44440213,13
+Gender Dysphoria,dsm5_chapt14diagnosis1,13.09964486,14
+Oppositional Defiant Disorder,dsm5_chapt15diagnosis1,15.60129129,15
+Intermittent Explosive Disorder,dsm5_chapt15diagnosis2,16.86123125,15
+Conduct Disorder,dsm5_chapt15diagnosis3,13.78337208,15
+Pyromania,dsm5_chapt15diagnosis4,15.1291,15
+Kleptomania,dsm5_chapt15diagnosis5,14.32974933,15
+Alcohol Use Disorder,dsm5_chapt16diagnosis1,15.95418318,16
+Alcohol Intoxication ,dsm5_chapt16diagnosis2,15.05277028,16
+Alcohol Withdrawal,dsm5_chapt16diagnosis3,15.44084023,16
+Caffeine Intoxication,dsm5_chapt16diagnosis4,14.15180384,16
+Caffeine Withdrawal,dsm5_chapt16diagnosis5,13.84276458,16
+Cannabis Use Disorder,dsm5_chapt16diagnosis6,16.11948106,16
+Cannabis Intoxication,dsm5_chapt16diagnosis7,18.00357478,16
+Cannabis Withdrawal,dsm5_chapt16diagnosis8,17.38859976,16
+Phencyclidine Use Disorder,dsm5_chapt16diagnosis9,13.31959331,16
+Other Hallucinogen Use Disorder,dsm5_chapt16diagnosis10,14.67610538,16
+Phencyclidine Intoxication,dsm5_chapt16diagnosis11,17.96149697,16
+Other Hallucinogen Intoxication,dsm5_chapt16diagnosis12,11.78935404,16
+Hallucinogen Persisting Perception Disorder,dsm5_chapt16diagnosis13,14.90831899,16
+Inhalant Use Disorder,dsm5_chapt16diagnosis14,17.62047675,16
+Inhalant Intoxication,dsm5_chapt16diagnosis15,14.08355115,16
+Opioid Use Disorder,dsm5_chapt16diagnosis16,17.85740869,16
+Opioid Intoxication,dsm5_chapt16diagnosis17,17.82603846,16
+Opioid Withdrawal,dsm5_chapt16diagnosis18,15.31515761,16
+"Sedative, Hypnotic, or Anxiolytic Use Disorder",dsm5_chapt16diagnosis19,15.65005019,16
+"Sedative, Hypnotic, or Anxiolytic Intoxication",dsm5_chapt16diagnosis20,18.62103338,16
+"Sedative, Hypnotic, or Anxiolytic Withdrawal",dsm5_chapt16diagnosis21,14.68108147,16
+Stimulant Use Disorder,dsm5_chapt16diagnosis22,16.10837342,16
+Stimulant Intoxication,dsm5_chapt16diagnosis23,18.78157584,16
+Stimulant Withdrawal,dsm5_chapt16diagnosis24,17.09334004,16
+Tobacco Use Disorder,dsm5_chapt16diagnosis25,15.11593488,16
+Tobacco Withdrawal,dsm5_chapt16diagnosis26,13.61718848,16
+Other (or Unknown) Substance Use Disorder,dsm5_chapt16diagnosis27,17.03952774,16
+Other (or Unknown) Substance Intoxication,dsm5_chapt16diagnosis28,16.54550786,16
+Other (or Unknown) Substance Withdrawal,dsm5_chapt16diagnosis29,14.74805004,16
+Gambling Disorder,dsm5_chapt16diagnosis30,14.58553924,16
+Delirium,dsm5_chapt17diagnosis1,16.34435093,17
+Major and Mild Neurocognitive Disorders,dsm5_chapt17diagnosis2,16.72464007,17
+Major or Mild Neurocognitive Disorder Due to Alzheimer? Disease,dsm5_chapt17diagnosis3,16.91314875,17
+Major or Mild Frontotemporal Neurocognitive Disorder,dsm5_chapt17diagnosis4,15.51188375,17
+Major or Mild Neurocognitive Disorder With Lewy Bodies,dsm5_chapt17diagnosis5,15.37654871,17
+Major or Mild Vascular Neurocognitive Disorder,dsm5_chapt17diagnosis6,17.85740869,17
+Major or Mild Neurocognitive Disorder Due to Traumatic Brain Injury,dsm5_chapt17diagnosis7,16.31052633,17
+Substance/Medication-Induced Major or Mild Neurocognitive Disorder,dsm5_chapt17diagnosis8,17.04442837,17
+Major or Mild Neurocognitive Disorder Due to HIV Infection,dsm5_chapt17diagnosis9,14.59333008,17
+Major or Mild Neurocognitive Disorder Due to Prion Disease,dsm5_chapt17diagnosis10,15.74776749,17
+Major or Mild Neurocognitive Disorder Due to Parkinson Disease,dsm5_chapt17diagnosis11,17.09334004,17
+Major or Mild Neurocognitive Disorder Due to Huntington Disease,dsm5_chapt17diagnosis12,16.54550786,17
+Major or Mild Neurocognitive Disorder Due to Another Medical Condition,dsm5_chapt17diagnosis13,15.06643639,17
+General Personality Disorder,dsm5_chapt18diagnosis1,16.47957917,18
+Paranoid Personality Disorder,dsm5_chapt18diagnosis2,15.09496053,18
+Schizoid Personality Disorder,dsm5_chapt18diagnosis3,15.92934038,18
+Schizotypal Personality Disorder,dsm5_chapt18diagnosis4,15.34150587,18
+Antisocial Personality Disorder,dsm5_chapt18diagnosis5,15.49603885,18
+Borderline Personality Disorder,dsm5_chapt18diagnosis6,14.32974933,18
+Histrionic Personality Disorder,dsm5_chapt18diagnosis7,15.34735332,18
+Narcissistic Personality Disorder,dsm5_chapt18diagnosis8,14.32731414,18
+Avoidant Personality Disorder,dsm5_chapt18diagnosis9,15.1217448,18
+Dependent Personality Disorder,dsm5_chapt18diagnosis10,14.66354746,18
+Obsessive-Compulsive Personality Disorder,dsm5_chapt18diagnosis11,14.42596008,18
+Personality Change Due to Another Medical Condition,dsm5_chapt18diagnosis12,16.14831657,18
+Voyeuristic Disorder,dsm5_chapt19diagnosis1,19.94745732,19
+Exhibitionistic Disorder,dsm5_chapt19diagnosis2,19.69067342,19
+Frotteuristic Disorder,dsm5_chapt19diagnosis3,18.34187659,19
+Sexual Masochism Disorder,dsm5_chapt19diagnosis4,18.05750055,19
+Sexual Sadism Disorder,dsm5_chapt19diagnosis5,21.087385,19
+Pedophilic Disorder,dsm5_chapt19diagnosis6,20.51609779,19
+Fetishistic Disorder,dsm5_chapt19diagnosis7,15.47818904,19
+Transvestic Disorder,dsm5_chapt19diagnosis8,13.1815938,19
