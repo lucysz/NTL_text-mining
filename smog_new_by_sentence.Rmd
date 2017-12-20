@@ -1,0 +1,465 @@
+---
+title: "Smog_index_by_sentence"
+author: "Zhu Shen"
+date: "11/19/2017"
+output: html_document
+---
+
+```{r include = FALSE}
+library(ggplot2)
+library(plyr)
+library(dplyr)
+library(plotly)
+```
+
+
+From the previous readability test, we find that Chapter 19 is the chaoter that is the most difficult to understand. We want to check whether it is the most diffuicult to understand because there is a specific diagnosis that is so hard that drives the average smog index score. It turns out that there is only one outlier and that outlier even has the effect of driving down the average score instead of driving up. And you can find that the 7th and 8th diagnoses are the two diagnoses that are relatively easy compared with other diagnoses. 
+
+Sexual Sadism Disorder is proved to be the diagnosis that is the most difficult to understand. And we want to check whether there is a specific sentence that drives up the smog index score for this diagnosis. However we find there is no outlier for Sexual Sadism Disorder text(5th diagnosis). So Sexual Sadism Disorder is the most difficult to understand for general because each sentence on average is hard to undertsand. We are a little worried that 4th diagnosis because of one driving-down outlier might have similar difficulty level compared with Sexual Sadism Disorder. The easiest sentence of diagnosis 4 is "However the disorder can be diagnosed in the context of s clearly sustained but shorter time period."
+
+```{r}
+smog_by_sentence_19 <- read.csv("smog_index_chapt19_latest_by_sentence.csv")
+smog_by_sentence_19 = smog_by_sentence_19[which(smog_by_sentence_19$X.2 != 0),]
+smog_by_sentence_19$ID <- seq.int(nrow(smog_by_sentence_19))
+smog_by_sentence_19 <- smog_by_sentence_19 %>%
+  mutate(chapter = 19)
+
+boxplot(smog_by_sentence_19$X.2 ~ smog_by_sentence_19$X, main="Boxplot of Smog Index for Sentences")
+
+p_19 <-ggplot(smog_by_sentence_19, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_19$X)
+
+print(p_19 + ggtitle("Diagnoses in Chapt 19"))
+
+```
+
+
+
+
+```{r}
+smog_by_sentence_18 <- read.csv("smog_index_chapt18_latest_by_sentence.csv")
+smog_by_sentence_18 = smog_by_sentence_18[which(smog_by_sentence_18$X.2 != 0),]
+smog_by_sentence_18$ID <- seq.int(nrow(smog_by_sentence_18))
+smog_by_sentence_18 <- smog_by_sentence_18 %>%
+  mutate(chapter = 18)
+
+boxplot(smog_by_sentence_18$X.2 ~ smog_by_sentence_18$X, main="Boxplot of Smog Index for Sentences")
+
+smog_by_sentence_18_1 = smog_by_sentence_18 %>%
+  filter(smog_by_sentence_18$X<=4)
+
+smog_by_sentence_18_2 = smog_by_sentence_18 %>%
+  filter(smog_by_sentence_18$X<=8 & smog_by_sentence_18$X>4)
+
+smog_by_sentence_18_3 = smog_by_sentence_18 %>%
+  filter(smog_by_sentence_18$X > 8)
+
+
+p_18_1 <-ggplot(smog_by_sentence_18_1, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_18_1$X)
+
+print(p_18_1 + ggtitle("Diagnoses in Chapt 18"))
+
+p_18_2 <-ggplot(smog_by_sentence_18_2, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_18_2$X)
+
+print(p_18_2 + ggtitle("Diagnoses in Chapt 18"))
+
+p_18_3 <-ggplot(smog_by_sentence_18_3, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_18_3$X)
+
+print(p_18_3 + ggtitle("Diagnoses in Chapt 18"))
+```
+
+
+
+
+
+
+```{r}
+smog_by_sentence_17 <- read.csv("smog_index_chapt17_latest_by_sentence.csv")
+smog_by_sentence_17 = smog_by_sentence_17[which(smog_by_sentence_17$X.2 != 0),]
+smog_by_sentence_17$ID <- seq.int(nrow(smog_by_sentence_17))
+smog_by_sentence_17 <- smog_by_sentence_17 %>%
+  mutate(chapter = 17)
+
+
+boxplot(smog_by_sentence_17$X.2 ~ smog_by_sentence_17$X, main="Boxplot of Smog Index for Sentences")
+
+smog_by_sentence_17_1 = smog_by_sentence_17 %>%
+  filter(smog_by_sentence_17$X<=6)
+
+smog_by_sentence_17_2 = smog_by_sentence_17 %>%
+  filter(smog_by_sentence_17$X>6)
+
+
+p_17_1 <-ggplot(smog_by_sentence_17_1, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_17_1$X)
+print(p_17_1 + ggtitle("Diagnoses in Chapt 17"))
+
+p_17_2 <-ggplot(smog_by_sentence_17_2, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_17_2$X)
+print(p_17_2 + ggtitle("Diagnoses in Chapt 17"))
+
+```
+
+
+```{r}
+smog_by_sentence_16 <- read.csv("smog_index_chapt16_latest_by_sentence.csv")
+smog_by_sentence_16 = smog_by_sentence_16[which(smog_by_sentence_16$X.2 != 0),]
+smog_by_sentence_16$ID <- seq.int(nrow(smog_by_sentence_16))
+smog_by_sentence_16 <- smog_by_sentence_16 %>%
+  mutate(chapter = 16)
+
+smog_by_sentence_16_1 = smog_by_sentence_16 %>%
+  filter(smog_by_sentence_16$X <=10)
+
+smog_by_sentence_16_2 = smog_by_sentence_16 %>%
+  filter(smog_by_sentence_16$X>10 & smog_by_sentence_16$X<=20)
+
+smog_by_sentence_16_3 = smog_by_sentence_16 %>%
+  filter(smog_by_sentence_16$X>20 & smog_by_sentence_16$X<=30)
+
+boxplot(smog_by_sentence_16_1$X.2 ~ smog_by_sentence_16_1$X, main="Boxplot of Smog Index for Sentences")
+boxplot(smog_by_sentence_16_2$X.2 ~ smog_by_sentence_16_2$X, main="Boxplot of Smog Index for Sentences")
+boxplot(smog_by_sentence_16_3$X.2 ~ smog_by_sentence_16_3$X, main="Boxplot of Smog Index for Sentences")
+
+p_16_1 <-ggplot(smog_by_sentence_16_1, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_16_1$X)
+print(p_16_1 + ggtitle("Diagnoses in Chapt 16"))
+
+p_16_2 <-ggplot(smog_by_sentence_16_2, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_16_2$X)
+print(p_16_2 + ggtitle("Diagnoses in Chapt 16"))
+
+p_16_3 <-ggplot(smog_by_sentence_16_3, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_16_3$X)
+print(p_16_3 + ggtitle("Diagnoses in Chapt 16"))
+```
+
+
+```{r}
+smog_by_sentence_15 <- read.csv("smog_index_chapt15_latest_by_sentence.csv")
+smog_by_sentence_15 = smog_by_sentence_15[which(smog_by_sentence_15$X.2 != 0),]
+smog_by_sentence_15$ID <- seq.int(nrow(smog_by_sentence_15))
+
+smog_by_sentence_15 <- smog_by_sentence_15 %>%
+  mutate(chapter = 15)
+
+boxplot(smog_by_sentence_15$X.2 ~ smog_by_sentence_15$X, main="Boxplot of Smog Index for Sentences")
+
+p_15 <-ggplot(smog_by_sentence_15, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_15$X)
+print(p_15 + ggtitle("Diagnoses in Chapt 15"))
+```
+
+```{r}
+smog_by_sentence_14 <- read.csv("smog_index_chapt14_latest_by_sentence.csv")
+smog_by_sentence_14 = smog_by_sentence_14[which(smog_by_sentence_14$X.2 != 0),]
+smog_by_sentence_14$ID <- seq.int(nrow(smog_by_sentence_14))
+
+smog_by_sentence_14 <- smog_by_sentence_14 %>%
+  mutate(chapter = 14)
+
+boxplot(smog_by_sentence_14$X.2 ~ smog_by_sentence_14$X, main="Boxplot of Smog Index for Sentences")
+
+p_14 <-ggplot(smog_by_sentence_14, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_14$X)
+print(p_14 + ggtitle("Diagnoses in Chapt 14"))
+```
+
+
+```{r}
+smog_by_sentence_13 <- read.csv("smog_index_chapt13_latest_by_sentence.csv")
+smog_by_sentence_13 = smog_by_sentence_13[which(smog_by_sentence_13$X.2 != 0),]
+smog_by_sentence_13$ID <- seq.int(nrow(smog_by_sentence_13))
+
+smog_by_sentence_13 <- smog_by_sentence_13 %>%
+  mutate(chapter = 13)
+
+boxplot(smog_by_sentence_13$X.2 ~ smog_by_sentence_13$X, main="Boxplot of Smog Index for Sentences")
+
+p_13 <-ggplot(smog_by_sentence_13, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_13$X)
+print(p_13 + ggtitle("Diagnoses in Chapt 13"))
+```
+
+
+```{r}
+smog_by_sentence_12 <- read.csv("smog_index_chapt12_latest_by_sentence.csv")
+smog_by_sentence_12 = smog_by_sentence_12[which(smog_by_sentence_12$X.2 != 0),]
+smog_by_sentence_12$ID <- seq.int(nrow(smog_by_sentence_12))
+
+smog_by_sentence_12 <- smog_by_sentence_12 %>%
+  mutate(chapter = 12)
+
+boxplot(smog_by_sentence_12$X.2 ~ smog_by_sentence_12$X, main="Boxplot of Smog Index for Sentences")
+
+smog_by_sentence_12_1 = smog_by_sentence_12 %>%
+  filter(smog_by_sentence_12$X<=6)
+
+smog_by_sentence_12_2 = smog_by_sentence_12 %>%
+  filter(smog_by_sentence_12$X>6)
+
+p_12_1 <-ggplot(smog_by_sentence_12_1, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_12_1$X)
+print(p_12_1 + ggtitle("Diagnoses in Chapt 12"))
+
+p_12_2 <-ggplot(smog_by_sentence_12_2, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_12_2$X)
+print(p_12_2 + ggtitle("Diagnoses in Chapt 12"))
+```
+
+
+```{r}
+smog_by_sentence_11 <- read.csv("smog_index_chapt11_latest_by_sentence.csv")
+smog_by_sentence_11 = smog_by_sentence_11[which(smog_by_sentence_11$X.2 != 0),]
+smog_by_sentence_11$ID <- seq.int(nrow(smog_by_sentence_11))
+
+smog_by_sentence_11 <- smog_by_sentence_11 %>%
+  mutate(chapter = 11)
+
+boxplot(smog_by_sentence_11$X.2 ~ smog_by_sentence_11$X, main="Boxplot of Smog Index for Sentences")
+
+p_11 <-ggplot(smog_by_sentence_11, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_11$X)
+print(p_11 + ggtitle("Diagnoses in Chapt 11"))
+```
+
+
+```{r}
+smog_by_sentence_10 <- read.csv("smog_index_chapt10_latest_by_sentence.csv")
+smog_by_sentence_10 = smog_by_sentence_10[which(smog_by_sentence_10$X.2 != 0),]
+smog_by_sentence_10$ID <- seq.int(nrow(smog_by_sentence_10))
+
+smog_by_sentence_10 <- smog_by_sentence_10 %>%
+  mutate(chapter = 10)
+
+boxplot(smog_by_sentence_10$X.2 ~ smog_by_sentence_10$X, main="Boxplot of Smog Index for Sentences")
+
+p_10 <-ggplot(smog_by_sentence_10, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_10$X)
+print(p_10 + ggtitle("Diagnoses in Chapt 10"))
+```
+
+
+```{r}
+smog_by_sentence_9 <- read.csv("smog_index_chapt9_latest_by_sentence.csv")
+smog_by_sentence_9 = smog_by_sentence_9[which(smog_by_sentence_9$X.2 != 0),]
+smog_by_sentence_9$ID <- seq.int(nrow(smog_by_sentence_9))
+
+smog_by_sentence_9 <- smog_by_sentence_9 %>%
+  mutate(chapter = 9)
+
+boxplot(smog_by_sentence_9$X.2 ~ smog_by_sentence_9$X, main="Boxplot of Smog Index for Sentences")
+
+p_9 <-ggplot(smog_by_sentence_9, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_9$X)
+print(p_9 + ggtitle("Diagnoses in Chapt 9"))
+```
+
+
+```{r}
+smog_by_sentence_8 <- read.csv("smog_index_chapt8_latest_by_sentence.csv")
+smog_by_sentence_8 = smog_by_sentence_8[which(smog_by_sentence_8$X.2 != 0),]
+smog_by_sentence_8$ID <- seq.int(nrow(smog_by_sentence_8))
+
+smog_by_sentence_8 <- smog_by_sentence_8 %>%
+  mutate(chapter = 8)
+
+boxplot(smog_by_sentence_8$X.2 ~ smog_by_sentence_8$X, main="Boxplot of Smog Index for Sentences")
+
+p_8 <-ggplot(smog_by_sentence_8, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_8$X)
+print(p_8 + ggtitle("Diagnoses in Chapt 8"))
+```
+
+
+```{r}
+smog_by_sentence_7 <- read.csv("smog_index_chapt7_latest_by_sentence.csv")
+smog_by_sentence_7 = smog_by_sentence_7[which(smog_by_sentence_7$X.2 != 0),]
+smog_by_sentence_7$ID <- seq.int(nrow(smog_by_sentence_7))
+
+smog_by_sentence_7 <- smog_by_sentence_7 %>%
+  mutate(chapter = 7)
+
+boxplot(smog_by_sentence_7$X.2 ~ smog_by_sentence_7$X, main="Boxplot of Smog Index for Sentences")
+
+p_7 <-ggplot(smog_by_sentence_7, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_7$X)
+print(p_7 + ggtitle("Diagnoses in Chapt 7"))
+```
+
+
+From the previous test, we find that hair pulling disorder (4th diagnosis in chapter 6) is the easiest to understand, we want to check whether there is a specific sentence that driving down the average smog index of this diagnosis. And we find that there is only one outlier but that outlier has the effect of driving up the score instead of driving down. 
+
+
+Pay attention to diagnoses 6 and diagnoses 7 in chapter 6. The average is hard and no outlier which means there is no single sentence that makes the whole diagnoses so hard. On average this diagnoses are hard in general. This explains why we observe a long tail(upward) in the previous boxplot(smog index vs. chapter) for chapter 6. 
+
+
+```{r}
+smog_by_sentence_6 <- read.csv("smog_index_chapt6_latest_by_sentence.csv")
+smog_by_sentence_6 = smog_by_sentence_6[which(smog_by_sentence_6$X.2 != 0),]
+smog_by_sentence_6$ID <- seq.int(nrow(smog_by_sentence_6))
+
+smog_by_sentence_6 <- smog_by_sentence_6 %>%
+  mutate(chapter = 6)
+
+boxplot(smog_by_sentence_6$X.2 ~ smog_by_sentence_6$X, main="Boxplot of Smog Index for Sentences")
+
+p_6 <-ggplot(smog_by_sentence_6, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_6$X)
+print(p_6 + ggtitle("Diagnoses in Chapt 6"))
+
+## Pay attention to diagnoses 6 and diagnoses 7. The average is hard and no outlier which means there is no signle sentence that make the whole diagnoses so hard. On average this diagnosis is hard in general. 
+```
+
+
+```{r}
+smog_by_sentence_5 <- read.csv("smog_index_chapt5_latest_by_sentence.csv")
+smog_by_sentence_5 = smog_by_sentence_5[which(smog_by_sentence_5$X.2 != 0),]
+smog_by_sentence_5$ID <- seq.int(nrow(smog_by_sentence_5))
+
+smog_by_sentence_5 <- smog_by_sentence_5 %>%
+  mutate(chapter = 5)
+
+boxplot(smog_by_sentence_5$X.2 ~ smog_by_sentence_5$X, main="Boxplot of Smog Index for Sentences")
+
+p_5 <-ggplot(smog_by_sentence_5, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_5$X)
+print(p_5 + ggtitle("Diagnoses in Chapt 5"))
+
+```
+
+
+```{r}
+smog_by_sentence_4 <- read.csv("smog_index_chapt4_latest_by_sentence.csv")
+smog_by_sentence_4 = smog_by_sentence_4[which(smog_by_sentence_4$X.2 != 0),]
+smog_by_sentence_4$ID <- seq.int(nrow(smog_by_sentence_4))
+
+smog_by_sentence_4 <- smog_by_sentence_4 %>%
+  mutate(chapter = 4)
+
+boxplot(smog_by_sentence_4$X.2 ~ smog_by_sentence_4$X, main="Boxplot of Smog Index for Sentences")
+
+p_4 <-ggplot(smog_by_sentence_4, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_4$X)
+print(p_4 + ggtitle("Diagnoses in Chapt 4"))
+
+```
+
+Chapter 3 is the bipolar chapter and we find many outliers that we think might drive the general difficulty level up. The highest one is bipolar II disorder and the hardest sentence is "Episodes of substance/medication-induced depressive disorder or substance/medication-induced bipolar and related disorder (representing the physiological effects of a medication, other somatic treatments for depression, drugs of abuse, or toxin exposure) or of depressive and related disorder due to another medical condition or bipolar and related disorder due to another medical condition do not count toward a diagnosis of bipolar II disorder unless they persist beyond the physiological effects of the treatment or substance and then meet duration criteria for an episode." which is soooo long. And I am also curious about the difficulty level per sentence of chapter 3 and chapter 19. So I checked which sentence is the most difficult sentence in chapter 9 and chapter 3 and I found that the sentence in chapter 3 of Bipolar II(34.1) is harder to understand than the most difficult sentence in chapter 19(28.2). However, when we check the difficulty level of all sentence of the descriptive text of the diagnosis, chapter 19 Sadism disorder has 22.2 on average and chapter 3 Bipolar II has 18.6.
+
+Checking sentence one by one, we find that even though the most difficult sentence in chapter 3 is harder than the very diffucult in chapter 19, there are only 4-5 very diffucult sentences in chapter 3 while other sentences are shorters and easier to understand on averge compared with the sentences in chapter 19 such that not a single sentence is extremely hard but polling together is harder than the sentences in chapter 3. 
+
+```{r}
+smog_by_sentence_3 <- read.csv("smog_index_chapt3_latest_by_sentence.csv")
+smog_by_sentence_3 = smog_by_sentence_3[which(smog_by_sentence_3$X.2 != 0),]
+smog_by_sentence_3$ID <- seq.int(nrow(smog_by_sentence_3))
+
+smog_by_sentence_3 <- smog_by_sentence_3 %>%
+  mutate(chapter = 3)
+
+boxplot(smog_by_sentence_3$X.2 ~ smog_by_sentence_3$X, main="Boxplot of Smog Index for Sentences")
+
+p_3 <-ggplot(smog_by_sentence_3, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_3$X)
+print(p_3 + ggtitle("Diagnoses in Chapt 3"))
+
+# Check what is the most difficult sentence in chapter 3
+smog_by_sentence_3$X.2[which.max(smog_by_sentence_3$X.2)]
+smog_by_sentence_3$X.1[which.max(smog_by_sentence_3$X.2)]
+smog_by_sentence_3$X[which.max(smog_by_sentence_3$X.2)]
+
+
+```
+
+```{r}
+smog_by_sentence_2 <- read.csv("smog_index_chapt2_latest_by_sentence.csv")
+smog_by_sentence_2 = smog_by_sentence_2[which(smog_by_sentence_2$X.2 != 0),]
+smog_by_sentence_2$ID <- seq.int(nrow(smog_by_sentence_2))
+
+smog_by_sentence_2 <- smog_by_sentence_2 %>%
+  mutate(chapter = 2)
+
+boxplot(smog_by_sentence_2$X.2 ~ smog_by_sentence_2$X, main="Boxplot of Smog Index for Sentences")
+
+smog_by_sentence_2_1 = smog_by_sentence_2 %>%
+  filter(smog_by_sentence_2$X<=4)
+
+smog_by_sentence_2_2 = smog_by_sentence_2 %>%
+  filter(smog_by_sentence_2$X>4)
+
+p_2_1 <-ggplot(smog_by_sentence_2_1, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_2_1$X)
+print(p_2_1 + ggtitle("Diagnoses in Chapt 2"))
+
+p_2_2 <-ggplot(smog_by_sentence_2_2, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_2_2$X)
+print(p_2_2 + ggtitle("Diagnoses in Chapt 2"))
+```
+
+```{r}
+smog_by_sentence_1 <- read.csv("smog_index_chapt1_latest_by_sentence.csv")
+smog_by_sentence_1 = smog_by_sentence_1[which(smog_by_sentence_1$X.2 != 0),]
+smog_by_sentence_1$ID <- seq.int(nrow(smog_by_sentence_1))
+
+smog_by_sentence_1 <- smog_by_sentence_1 %>%
+  mutate(chapter = 1)
+
+boxplot(smog_by_sentence_1$X.2 ~ smog_by_sentence_1$X, main="Boxplot of Smog Index for Sentences")
+
+smog_by_sentence_1_1 = smog_by_sentence_1 %>%
+  filter(smog_by_sentence_1$X<=6)
+
+smog_by_sentence_1_2 = smog_by_sentence_1 %>%
+  filter(smog_by_sentence_1$X>6)
+
+p_1_1 <-ggplot(smog_by_sentence_1_1, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_1_1$X)
+print(p_1_1 + ggtitle("Diagnoses in Chapt 1"))
+
+p_1_2 <-ggplot(smog_by_sentence_1_2, aes(x=ID,y = X.2))+
+  geom_bar(stat="identity", fill=smog_by_sentence_1_2$X)
+print(p_1_2 + ggtitle("Diagnoses in Chapt 1"))
+```
+
+
+
+
+```{r, warning=FALSE}
+smog_full = rbind(smog_by_sentence_1, smog_by_sentence_2, smog_by_sentence_3,smog_by_sentence_4,smog_by_sentence_5,smog_by_sentence_6,smog_by_sentence_7,smog_by_sentence_8,smog_by_sentence_9,smog_by_sentence_10,smog_by_sentence_11,smog_by_sentence_12,smog_by_sentence_13,smog_by_sentence_14,smog_by_sentence_15,smog_by_sentence_16,smog_by_sentence_17,smog_by_sentence_18,smog_by_sentence_19)
+
+smog_full$ID <- seq.int(nrow(smog_full))
+
+summary(smog_full)
+smog_full$chapter = as.factor(smog_full$chapter)
+smog_full$X =as.factor(smog_full$X)
+
+fm.aov = aov(X.2 ~ chapter+X, data=smog_full)
+summary(fm.aov)
+model.tables(fm.aov)
+
+smog_full$X.2[which.max(smog_full$X.2)]
+smog_full$chapter[which.max(smog_full$X.2)]
+smog_full$X.1[which.max(smog_full$X.2)]
+
+smog_full$X.2[which.min(smog_full$X.2)]
+smog_full$chapter[which.min(smog_full$X.2)]
+smog_full$X.1[which.min(smog_full$X.2)]
+
+smog_low_high <- smog_full[order(smog_full$X.2),] 
+head(smog_low_high)
+tail(smog_low_high)
+
+smog_arrange = aggregate(smog_full$X.2~smog_full$chapter,FUN=mean)
+smog_arrange$`smog_full$X.2`[which.max(smog_arrange$`smog_full$X.2`)]
+smog_arrange$`smog_full$chapter`[which.max(smog_arrange$`smog_full$X.2`)]
+
+smog_arrange$`smog_full$X.2`[which.min(smog_arrange$`smog_full$X.2`)]
+smog_arrange$`smog_full$chapter`[which.min(smog_arrange$`smog_full$X.2`)]
+
+plot(smog_full$X.2~smog_full$chapter, col="gray")
+
+#write.csv(smog_full, file = "normalized_smog.csv",row.names=FALSE)
+```
