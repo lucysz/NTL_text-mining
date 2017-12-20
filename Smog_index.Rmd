@@ -1,0 +1,79 @@
+---
+title: "Smog_Index"
+author: "Zhu Shen"
+date: "10/30/2017"
+output: html_document
+---
+
+```{r include = FALSE}
+library(ggplot2)
+library(plyr)
+library(dplyr)
+library(plotly)
+```
+
+```{r}
+
+smog <- read.csv("smog_index_full_latest.csv")
+
+summary(smog)
+mean_value = mean(smog$index)
+
+smog_arrange <- smog[order(smog$index, decreasing = TRUE), ]
+head(smog_arrange,5)
+
+
+smog$name[which.max(smog$index)]
+smog$name[which.min(smog$index)]
+
+
+smog_lth_new = smog_arrange[order(smog_arrange$index),]
+value = smog_lth_new$index
+barplot(value, main="Smog Index",
+   xlab="Diagnosis", ylab="SMOG Index")
+
+
+
+smog_new <- smog %>%
+  mutate(smog_id = seq.int(nrow(smog)))%>%
+  mutate(smog_level = ifelse(smog$index < 15, "low", ifelse(smog$index < 17, "median", "high"))
+         )
+
+
+
+smog = as.data.frame(smog)
+new_smog = smog[c(-1,-2)]
+
+
+group_mean = aggregate(new_smog[1], list(new_smog$chapt), mean)
+smog_mean = merge(smog, group_mean, by.x='chapt', by.y='Group.1')
+
+smog_mean$chapt = as.factor(smog_mean$chapt)
+
+#library(Cairo)
+#png("Plot.png", width = 12.5, height = 10, units = 'in', res = 300)
+bp = ggplot(smog_mean, aes(x=chapt, y=index.x, fill=index.y)) + 
+  stat_boxplot(geom ="errorbar",stat_params = list(width = 0.5), size=0.4) + geom_boxplot(lwd=0.4) 
+
+bp
+#dev.off()
+
+
+new_level = read.csv("new_level.csv")
+library(plotly)
+
+Chapters <- new_level$chapt
+
+Low <- new_level$low
+Median <- new_level$median
+High <- new_level$high
+
+
+p <- plot_ly(new_level, x = ~Chapters, y = ~Low, type = 'bar', name = 'Low') %>%
+  add_trace(y = ~Median, name = 'Median') %>%
+  add_trace(y = ~High, name = 'High') %>%
+  #scale_y_continuous(labels = percent_format() %>%
+  layout(yaxis = list(title = 'Percent'), barmode = 'stack')
+p
+
+```
